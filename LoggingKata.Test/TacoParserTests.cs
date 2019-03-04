@@ -12,22 +12,27 @@ namespace LoggingKata.Test
         }
 
         [Theory]
-        [InlineData("Example")]
+        [InlineData("0, 0, test")]
         public void ShouldParse(string str)
         {
-            // TODO: Complete Should Parse
+            //Arrange
+            TacoParser tacoParser = new TacoParser();
+            //Act
+            ITrackable result = tacoParser.Parse(str);
+            //Assert
+            Assert.NotNull(result);
         }
 
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        [InlineData("not a number,0.0,Taco Bell Test")]
-        [InlineData("0.0,not a number,Taco Bell Test")]
-        [InlineData("0.0,0.0,Taco Bell Test")]
-        [InlineData("-10.0,10.0,Taco Bell Test")]
         public void ShouldFailParse(string str)
         {
-            // TODO: Complete Should Fail Parse
+            TacoParser tacoParser = new TacoParser();
+
+            ITrackable result = tacoParser.Parse(str);
+
+            Assert.Null(result);
         }
     }
 }
