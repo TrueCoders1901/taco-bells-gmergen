@@ -48,6 +48,7 @@
             point.Latitude = lat;
             point.Longitude = lon;
 
+            tacoBell.Location = point;
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable

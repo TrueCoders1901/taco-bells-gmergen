@@ -16,8 +16,6 @@ namespace LoggingKata
 
             var lines = File.ReadAllLines(csvPath);
 
-            logger.LogInfo($"Lines: {lines[0]}");
-
             var parser = new TacoParser();
 
             var locations = lines.Select(parser.Parse).ToArray();
@@ -50,7 +48,9 @@ namespace LoggingKata
                 }
             }
 
-            Console.WriteLine(locX.Name + locX.Location + locY.Name + locY.Location + distance);
+            Console.WriteLine(locX.Name);
+            Console.WriteLine(locY.Name);
+            Console.WriteLine(distance);
             Console.ReadLine();
            
         }
